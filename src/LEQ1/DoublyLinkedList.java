@@ -128,9 +128,9 @@ public class DoublyLinkedList<E> {
     public String toString(){
         //your code
         ArrayList<E> tempArr = new ArrayList<>();
-        Node<E> start = header;
-        while(header != null){
-            tempArr.add(header.element);
+        Node<E> start = header.next;
+        while(start != trailer){
+            tempArr.add(start.element);
             start = start.next;
         }
 
