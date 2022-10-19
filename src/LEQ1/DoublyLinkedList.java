@@ -108,6 +108,21 @@ public class DoublyLinkedList<E> {
         successor.setPrev(newest);
         size++;
     }
+
+    public void addInBetween(E e , E pred , E nextN){
+        removeInBetween(e);
+        addBetween(e , findNode(pred) , findNode(nextN));
+
+    }
+
+    public void removeInBetween(E e){
+        Node<E> temp  = findNode(e);
+        Node<E> tempPrev = temp.prev;
+        Node<E> tempNxt = temp.getNext();
+        temp.next.prev = temp.prev;
+        tempPrev.setNext(tempNxt);
+
+    }
     /**
      * @return the node containing the element e (or null if empty)
      */
